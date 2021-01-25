@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+/* parte header */
+header{
+  min-height: calc(20px + 20vh);
+  /* debug */
+  background-color: yellow;
+}
+/* regole main */
+.aside {
+  float: left;
+  width: 60%;
+  /* debug */
+  background-color: pink;
+  height: 50px;
+}
+.sezione {
+  float: right;
+  width: 40%;
+
+  /* debug */
+  background-color: violet;
+  height: 100px;
+}
+
+/* footer */
+footer{
+  height: 20px;
+
+  /* debug */
+  background-color: blue;
+
+}
