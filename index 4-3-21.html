@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+    </div>
+    <script>
+    // esempio dell'utilizzo di if else
+    var number = prompt('Dimmi un numero');
+        // variante minima
+        if (number >= 0) {
+            console.log('numero positivo');
+        }
+        // variante con else
+        if (number >= 0) { // stmt positivo
+            console.log('numero positivo');
+        } else { // stmt altrimenti
+            console.log('numero negativo');
+        }
+        // variante multi-condizione
+        if (number > 0) {
+            console.log('numero positivo');
+        } else if (number == 0) {
+            console.log('numero neutro');
+        } else {
+            console.log('numero negativo');
+        }
+      // esempio di utilizzo di if ed else
+      var word1 = prompt('word 1');
+        var word2 = prompt('word 2');
+        var lng1 = word1.length;
+        var lng2 = word2.length;
+        if (lng1 > lng2) {
+            console.log('word1 is longer then word2');
+        } else if (lng2 > lng1) {
+            console.log('word2 is longer then word1');
+        } else {
+            console.log('word1 as long as word2');
+        }
+        // utilizzo di random tra due numeri
+        var min = 22;
+        var max = 87 - min; // 34
+        var rnd = Math.floor(Math.random() * max) + min;
+        console.log('rnd', rnd);
+        // pari e dispari
+        var x = 13;
+        var resto2Div = x % 2;
+        console.log("x = " + x);
+        if (resto2Div == 0) {
+            console.log("x e' pari");
+        } else {
+            console.log("x e' dispari");
+        }
+
+        // richiedere numero all'utente calcolare un numero casuale compreso tra 1 e 50 stampare se la somma tra i due numeri e' pari o dispari
+
+
+      var numero= parseInt(prompt('Scrivi un numero')) ;
+      var numeroRandom= Math.ceil(Math.random()*50);
+      var res= numero + numeroRandom
+      console.log(numeroRandom) ;
+      console.log(res) ;
+      if (res % 2 ==0) {
+        console.log('numero è pari') ;
+      }
+        else  {
+          console.log('numero è dispari') ;
+
+        }
+
+    </script>
+  </body>
+</html>

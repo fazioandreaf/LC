@@ -17,14 +17,14 @@ header{
 /* regole main */
 .aside {
   float: left;
-  width: 60%;
+  width: 25%;
   /* debug */
   background-color: pink;
   height: 50px;
 }
 .sezione {
-  float: right;
-  width: 40%;
+  float: left;
+  width: 50%;
 
   /* debug */
   background-color: violet;

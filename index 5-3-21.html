@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+    </div>
+    <script>
+      // uso degli array, posizione, lenght e push
+        var arr = ['pippo', 10, 'topolino'];
+        console.log('arr', typeof arr, arr);
+        arr.push('HELLO');
+        // arr[0] = 10000;
+        console.log('arr[0]', (typeof arr[0]), arr[0]);
+        console.log('arr[1]', (typeof arr[1]), arr[1]);
+        console.log('arr[2]', (typeof arr[2]), arr[2]);
+        console.log('arr[3]', (typeof arr[3]), arr[3]);
+        // arr[arr.length - 1] = 'CIAO';
+        // console.log('arr', typeof arr, arr);
+        // console.log('arr lng', arr.length);
+
+
+        // Crea un array contenente 3 nomi.
+        // Chiedi un numero da 0 a 2 all'utente e
+        // stampa l'elemento dell'array
+        // corrispondente.
+        //           0        1        2     ...
+        var arr = ["Luca", "Marco", "Paolo"];
+        var index = prompt('Dimmi un indice compreso tra 0 e 2');
+        console.log(arr[index]);
+        // document.getElementById('mainTitle').innerHTML =  arr[index];
+
+        // CICLO for
+        for (var i = 6; i < 20; i = i + 3) {
+            console.log(i);
+            console.log('fine iterazione');
+        }
+        console.log('fine for');
+
+        // indici      0        1        2       3       4        5
+        var arr = [ 'hello', 'world', 'ciao', 'mondo', 'hola', 'mundo' ]; // lng = 6
+        console.log(arr, arr.length);
+        for (var i=0;i<arr.length;i++) {
+            console.log(i, arr[i]);
+        }
+
+        // stampare in modo dispare un array
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        for (i=0;i<arr.length; i=i+2) {
+          console.log(i, arr[i])
+        }
+        // VERSIONE 2
+        for (var i=0;i<arr.length;i++) {
+            if (i % 2 == 0) {
+                console.log(arr[i]);
+            }
+        }
+        var arr = [ 'hello', 'world', 'ciao', 'mondo', 'hola', 'mundo' ];
+        for (var i=0;i<arr.length;i++) {
+            var elem = arr[i];
+            if (elem.length % 2 ==0) {
+              console.log("La lunghezza é pari della parola " + elem);
+            }else {
+
+              console.log("La lunghezza é dispari della parola " + elem)
+            }
+        }
+    </script>
+  </body>
+</html>

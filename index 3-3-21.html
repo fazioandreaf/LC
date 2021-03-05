@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- richiedere numero all'utente
+ calcolare un numero casuale compreso tra 1 e 50
+
+ stampare se la somma tra i due numeri e' pari
+ o dispari<html lang="en" dir="ltr"> -->
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // tipi di varibili che troviamo
+      var miaVarEmpty;
+      var miaVarNumber = -10.5;
+      var miaVarString = 'hello ' + 'world';
+      var miaVarBoolean = true;
+      var miaVarObj = {};
+      var miaVarFun = function() { return 'hello world'; };
+      var miaVarUnd = undefined;
+      var miaVarNull = null;
+      // vado a visualizzare: il nome, il tipo del dato e il suo contenuto
+      console.log('miaVarEmpty', typeof miaVarEmpty, miaVarEmpty);
+      console.log('miaVarNumber', typeof miaVarNumber, miaVarNumber);
+      console.log('miaVarString', typeof miaVarString, miaVarString);
+      console.log('miaVarBoolean', typeof miaVarBoolean, miaVarBoolean);
+      console.log('miaVarObj', typeof miaVarObj, miaVarObj);
+      console.log('miaVarFun', typeof miaVarFun, miaVarFun);
+      console.log('miaVarUnd', typeof miaVarUnd, miaVarUnd);
+      console.log('miaVarNull', typeof miaVarNull, miaVarNull);
+      // esempi di operazioni
+      var x = 10;
+      var y = 20;
+      var sum = 10 + 20;
+      var sum2 = y - x;
+      var sum3 = x * y;
+      var sum4 = x / 20;
+      console.log('sum', typeof sum, sum);
+      console.log('sum2', typeof sum2, sum2);
+      console.log('sum3', typeof sum3, sum3);
+      console.log('sum4', typeof sum4, sum4);
+      var info = prompt('Give me your info');
+      console.log('info', typeof info, info);
+    </script>
+    <script>
+    // LIVE 1 esempio di inserimento html in ud id
+    var nomeUtente = prompt("Dimmi il tuo nome e ti diro' chi sei");
+    document.getElementById('mainTitle').innerHTML = "Hello " + nomeUtente;
+    console.log('nomeUtente', typeof nomeUtente, nomeUtente);
+    // LIVE 2 esempio di quanti anni avro se ho 30anni
+    var year = 2021;
+    var birthYearStr = prompt('Quando sei nato?');
+    var birthYearNumber = parseInt(birthYearStr);
+    var diff = year - birthYearStr;
+    var sumStr = birthYearStr + diff;
+    var sumNumber  = birthYearNumber + diff;
+    console.log(year, birthYearStr, birthYearNumber, diff, sumStr, sumNumber);
+    var birthPlace = prompt('Dove sei nato?');
+    console.log(birthYearStr, birthPlace);
+    LIVE 2 ONE-LINE
+    var res = parseInt(prompt('Quando sei nato?')) + (2021 - 32);
+    console.log(res);
+
+    // LIVE 3    richiedere all'utente base e altezza e calcolare area del rettangolo
+    var base = prompt('Base');
+    var altezza = prompt('Altezza');
+    var baseNumb = parseInt(base);
+    var altezzaNumb = parseInt(altezza);
+    var area = baseNumb * altezzaNumb;
+    document.getElementById('mainTitle').innerHTML = area;
+    console.log(area);
+
+
+    </script>
+    </body>
+</html>
