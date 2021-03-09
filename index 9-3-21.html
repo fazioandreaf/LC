@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1 id="mainTitle"></h1>
+    </div>
+    <div id="dRosso" style="background-color: red;"></div>
+    <div id="dVerde" style="background-color: green;"></div>
+    <script>
+      // Generatore di "nomi cognomi" casuali: prendendo una 
+      // lista di nomi e una lista di cognomi, Gatsby vuole 
+      // generare una falsa lista di invitati.
+        // var names = ['Michele', 'Fabio', 'Roberto'];
+        // var lastnames = ['Forghieri', 'Papagni', 'Marazzini'];  
+        // var fullnames = [];
+        // // loop
+        // for(i=0;i<5;i++){
+        //   var numberNewname = Math.floor(Math.random(names.length)*3);
+        //   var numberNewlastname = Math.floor(Math.random(lastnames.length)*3);
+        //   var value = [names[numberNewname], lastnames[numberNewlastname]]
+        //   fullnames.push(value)
+        // }
+        // console.log(fullnames)
+
+
+        // soluzione di giovanni
+        // for (var i=0;i<5;i++) {
+        //       var nameRnd = names[Math.floor(Math.random() * nameLng)];
+        //       var lastnameRnd = lastnames[Math.floor(Math.random() * lastnameLng)];
+        //       fullnames.push(nameRnd + ' ' + lastnameRnd);
+        //   }
+
+
+        // Crea due array che hanno un numero di elementi diversi. 
+        // Aggiungi elementi all'array che ha meno elementi fino a 
+        // quando ne avrà tanti quanti l'altro.
+        // var arr1 = [ 5,3214,234,5234,5423,54 ];
+        // var arr2 = [ 15, 2, 7 ];
+
+        // if(arr1.length<arr2.length){
+        //   var diff= arr2.length-arr1.length;
+        //   for (i=diff; i>0; i--){
+        //     arr1.push(Math.floor(Math.random()*100))
+        //   }
+        // }else if(arr1.length>arr2.length){
+        //   var diff= arr1.length-arr2.length;
+        //   for (i=diff; i>0; i--){
+        //     arr2.push(Math.floor(Math.random()*100))
+        //   }
+        // }
+        // console.log(arr1,arr2)
+
+        // Soluzione di giovanni 
+        // Crea due array che hanno un numero di elementi diversi. 
+        // Aggiungi elementi all'array che ha meno elementi fino a 
+        // quando ne avrà tanti quanti l'altro.
+        // var arr1 = [ 5, 3, 4, 5 ]; // 4 elems
+        // var arr2 = [ 15, 2, 7, 10, 20, 1, 2, 3, 4, 5, 6, 7 ]; // 12 elems
+        // var lng1 = arr1.length;
+        // var lng2 = arr2.length;
+        // if (lng1 == lng2) {
+        //     console.log("Sono uguali");
+        //     var shortArr = arr1;
+        //     var longArr = arr2;
+        // } else if (lng1 > lng2) {
+        //     var shortArr = arr2;
+        //     var longArr = arr1;
+        // } else { // lng2 > lng1
+        //     var shortArr = arr1;
+        //     var longArr = arr2;
+        // }
+        // var elemMancanti = longArr.length - shortArr.length;
+        // for (var i=0;i<elemMancanti;i++) {
+        //     var elemRnd = Math.floor(Math.random() * 100) + 1;
+        //     shortArr.push(elemRnd);
+        // }
+        // console.log(shortArr, longArr);
+
+        // Chiedere all'utente un valore limite, poi richiedere all'utente una serie di valori
+        // finche' la somma non supera il valore limite e stampare i valori forniti dall'utente
+
+        // var limit = parseInt(prompt('Dimmi il valore limite'));
+        // var sum = 0;
+        // var values = [];
+        // while (sum < limit) {
+        //     var value = parseInt(prompt('Dimmi valore'));
+        //     values.push(value);
+        //     sum += value; // sum = sum + value;
+        // }
+        // console.log(sum, values);
+
+        // Crea due tag div con due id diversi. 
+        // Un div avrà il testo colorato di rosso mentre l'altro di verde. 
+        // Partendo da un array di numeri, stampiamo nell'id rosso i numeri 
+        // dispari e in verde i numeri pari.
+        // var numbers = [14, 20, 1, 3, 22];
+        // for (i=0;i<100;i++){
+        //   numbers.push(Math.floor(Math.random()*100))
+        // }
+        // for(i=0;i<numbers.length;i++){
+        //   console.log(numbers[i])
+        //   if(numbers[i]%2 == 0){
+        //     document.getElementById('dRosso').innerHTML += numbers[i] + '-';
+        //   }else {
+        //     document.getElementById('dVerde').innerHTML += numbers[i] + '-';
+        //   }
+        // }
+
+        // soluzione di giovanni var numbers = [15, 20, 1, 3, 22];
+        // var divPair = document.getElementById('pair');
+        // var divOdd = document.getElementById('odd');
+        // for (var i=0;i<numbers.length;i++) {
+        //     var number = numbers[i];
+        //     if (number % 2 == 0) { // pair
+        //         divPair.innerHTML += number + "<br>";
+        //     } else { // odd
+        //         divOdd.innerHTML += number + "<br>";
+        //     }
+        // }
+    </script>
+  </body>
+</html>
