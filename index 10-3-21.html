@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1 id="mainTitle"></h1>
+    </div>
+    <div id="dRosso" style="background-color: red;"></div>
+    <div id="dVerde" style="background-color: green;"></div>
+    <script>
+      // acquisire numero da utente, stamparlo
+      // all'interno dell'h1
+      // colorare poi il testo di rosso nel caso
+      // in cui il numero sia pari e di verde nel
+      // caso in cui sia dispari
+      //   var value= parseInt(prompt('Scrivi un numero'));
+      //   var maintitleEvent = document.getElementById('mainTitle');
+      //   maintitleEvent.innerHTML += value;
+      //   if (value %2 ==0){
+      //     maintitleEvent.className += 'red';
+      //   } else {
+      //     maintitleEvent.className += 'green';
+
+      //   }
+     
+      // // soluzione giovanni
+      //   var value = prompt('Dimmi numero');
+      //   var myRow = document.getElementById('row');
+      //   if (value % 2 == 0) { // pair
+      //       myRow.innerHTML += "<h1 class='pair'>" + value + "</h1>";
+      //   } else { // odd
+      //       myRow.innerHTML += "<h1 class='odd'>" + value + "</h1>";
+      //   }
+      
+      // generare 10 numeri casuali da stampare in h1 di classe
+      // pari o dispari all'interno del tag row
+      var maintitleEvent = document.getElementById('mainTitle')  ;
+      var arr=[];
+      var arrDisplay=[];
+      for (i=0;i<50; i++){
+        arr[i]= Math.round(Math.random()*100);
+        if(arrDisplay.length<10){
+          if(arr[i]%2 == 0){
+            arrDisplay.push(arr[i])
+          }
+
+        }else {
+          break
+        }
+
+      }
+      maintitleEvent.innerHTML = arrDisplay;
+      console.log(arr,arrDisplay)
+    </script>
+  </body>
+</html>
