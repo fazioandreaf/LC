@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+      .row {
+        text-align: center;
+      }
+      .row h1 {
+        margin: 10px auto;
+      }
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1 id="mainTitle"></h1>
+    </div>
+    <div id="dRosso" style="background-color: red;"></div>
+    <div id="dVerde" style="background-color: green;"></div>
+    <script>
+      function random(valoremax,valoremin) {
+        var randomizzato = Math.floor(Math.random() *valoremax)+valoremin;
+        return randomizzato
+        // Il return serve perché non ho un qualcosa che agisce gia sul dom
+      }
+      for (i=0;i<10;i++){
+
+        var rnd = random(20,1)
+        console.log((i+1) + '°','random',rnd)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      body {
+        background-color:lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1 id="mainTitle">Hello World!!!</h1>
+      <h1 id="mainTitle2"></h1>
+    </div>
+    <script>
+      // TODO NOW
+      // - alert con "fine giro" dopo 10 secondi (setTimeout)
+      // - stampare in pagina cronometro che arriva a 10 secondi (setInterval)
+      
+      // function logger(){
+        
+      //     alert('Basta giocare con le bambole')
+          
+      // }
+      // function inner(){
+      //   setTimeout(logger,10000)
+      // }
+      // inner() 
+      var tempo=0;
+      var clock;
+      function stampare(){
+        tempo=tempo+1;
+        console.log(tempo);
+        document.getElementById('mainTitle2').innerHTML=tempo
+        if(tempo==3){
+          document.getElementById('mainTitle2').innerHTML='ciaooo'
+          clearInterval(clock)
+        }
+        
+      }
+      function inner() {
+        clock=setInterval(stampare,1000);
+      }
+      inner()
+    </script>
+  </body>
+</html>
