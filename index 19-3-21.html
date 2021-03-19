@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      .container {
+          display: flex;
+          width: 100vw;
+          height: 100vh;
+          background-color: purple;
+          color: white;
+      }
+      .container > * {
+          margin: auto;
+      }    
+      .circle {
+        border-radius: 100%;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="circle" class="circle"></div>
+        <button id="minus-width" onclick="minusClick('#target-width','width','#circle')" >-</button>
+        <span id="target-width"></span>
+        <button id="plus-width" onclick="plusClick('#target-width','width','#circle')">+</button>
+        <button id="minus-height" onclick="minusClick('#target-height','height','#circle')">-</button>
+        <span id="target-height"></span>
+        <button id="plus-height" onclick="plusClick('#target-height','height','#circle')">+</button>
+      </div>
+    </div>   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script>
+      // TODO NOW
+      // associare evento ai bottoni + e - in modo da far variare il numero al centro di +/- 1
+      // all'esercizio precedente aggiungere la limitazione sotto lo 0 e sopra il 20 che impedisce al counter di superare questi valori e notifica all'utente con un allert
+      // var valoreIniziale=10
+      // function init() {
+      // $('#target').text(valoreIniziale);
+      // }
+      // $('div button:first-child').click(function() {
+      //   if(valoreIniziale<1){
+      //     return alert('Non puoi andare sotto lo 0')
+      //   }
+      //   $('#target').text(valoreIniziale-1)
+      //   valoreIniziale--
+      // })
+      // $('div button:last-child').click(function() {
+      //   if(valoreIniziale>19){
+      //     return alert('Non puoi andare sotto lo 20')
+      //   }
+      //   $('#target').text(valoreIniziale+1)
+      //   valoreIniziale++
+      // })
+      // init();
+      // ridimensionare in larghezza il cerchio alla pressione dei tasti + e -
+      function minusClick(operation,dimension,target) {
+        var value = $(operation).text();
+        var valueH = parseInt($(target).css(dimension));
+        console.log(valueH);
+        value--;
+        if (value < 0) {
+            value = 0;
+            alert('Non fare il furbo!');
+        }
+        $(operation).text(value);
+        valueH=valueH -10;
+        $(target).css(dimension,valueH);
+        console.log(valueH);
+      }
+      function plusClick(operation,dimension,target) {
+        var value = $(operation).text();
+        var valueH = parseInt($(target).css(dimension));
+        console.log(valueH);
+        value++;
+        if (value < 0) {
+            value = 0;
+            alert('Non fare il furbo!');
+        }
+        $(operation).text(value);
+        valueH=valueH +10;
+        $(target).css(dimension,valueH);
+        console.log(valueH);
+      }
+      function init() {
+          // VALUES
+          $('#target-width,#target-height').text(10);
+          // BUTTONS
+          
+          // $('#minus-height').click(minusClick('#target-width','height','#circle'));    
+          // $('#plus-height').click(plusClick);    
+          // $('#plus-width').click(plusClick);    
+          // CIRCLE
+          $('#circle').css('width', '100px');
+          $('#circle').css('height', '100px');
+      }
+      init();
+      // ricalcando la soluzione appena vista per la width, generare html + js necessario per ottenere altri 2 tasti - e + che andranno a modificare l'altezza in accordo con il valore centale
+    </script>
+  </body>
+</html>
