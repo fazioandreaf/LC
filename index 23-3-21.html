@@ -41,9 +41,19 @@
             }
             .box span {
                 margin: auto;
+                display: none;
             }
             .bg-red {
                 color: red;
+            }
+            .mostra{
+              display: block;
+            }
+            .red{
+              background-color: red;
+            }
+            .green{
+              background-color: green;
             }
         </style>
     </head>
@@ -59,26 +69,38 @@
               var localMax = max - min + 1;
               return Math.floor(Math.random() * localMax) + localMin;
           }
+          // Nel momento in cui la box mostra il valore contenuto colorare il background di verde per valori pari e rosso per valori dispari, nascondendo poi il colore alla scomparsa del valore
+          // Al primo click della card far comparire numero con background (verde/rosso); al secondo click sulla stessa card, eliminare completamente la card utilizzando la .remove()
           function addRandomValues() {
-              $('.box').each(function() {
-                $('.box').click(function(){
-
-                  var rnd = getRandomValue(1, 100);
-                  
-                  $(this).html('<span class="text">' + rnd + '</span>');
-                })
+              $('.box').click(function() {
+                var clickedBtn =$(this);
+                var clickedSpan= clickedBtn.find('span');
+                var numero =clickedSpan.text()
+                if(clickedBtn.hasClass('green') || clickedBtn.hasClass('red')){
+                  clickedBtn.removeClass('box')
+                }
+                if(numero%2 ==0) {
+                  clickedBtn.toggleClass('green')
+                }else {
+                  clickedBtn.toggleClass('red')
+                }
+                
+                clickedSpan.toggle();
+                console.log(clickedBtn)
               });
-          }
-          function boxGenerator(boxCount) {
+            }
+            function boxGenerator(boxCount) {
               var boxes = $('.boxes');
               for (var i=0;i<boxCount;i++) {
-                  boxes.append('<div class="box"></div>');
+                var rnd = getRandomValue(1, 100);
+                  boxes.append('<div class="box"><span class="text">' + rnd + '</span></div>');
               }
           }
           function init() {
-              boxGenerator(5);
-              
+            let numberBox=parseInt(prompt('quanti quadrati vuoi?'))
+              boxGenerator(numberBox);
               addRandomValues();
+
           }
           // Modificare il codice per far apparire il numero casuale al click della box
           $(document).ready(init);
