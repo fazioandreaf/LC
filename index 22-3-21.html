@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Stampa i tuoi dati</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      .container {
+          display: flex;
+          width: 100vw;
+          height: 100vh;
+          background-color: purple;
+          color: white;
+      }
+      .container > * {
+          margin: auto;
+      }    
+      .circle {
+        border-radius: 100%;
+        background-color: greenyellow;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+
+        <h1 id="title">ciao</h1>
+      </div>
+    </div>
+  <script>   
+  function init(){
+    $('#title').slideToggle(5000);
+    $('#title').fadeToggle(5000);
+    $('#title').toggleClass('red'); //leva e mette la classe
+  }
+    $('document').ready(init);
+
+  </script>
+
+</body>
+</html>

@@ -29,10 +29,10 @@
     <div class="container">
       <div class="row">
         <div id="circle" class="circle"></div>
-        <button id="minus-width" onclick="minusClick('#target-width','width','#circle')" >-</button>
+        <button id="minus-width" onclick="minusClick('#target-width','width','#circle') " >-</button>
         <span id="target-width"></span>
-        <button id="plus-width" onclick="plusClick('#target-width','width','#circle')">+</button>
-        <button id="minus-height" onclick="minusClick('#target-height','height','#circle')">-</button>
+        <button id="plus-width" onclick="plusClick('#target-width','width','#circle') ">+</button>
+        <button id="minus-height" onclick="minusClick('#target-height','height','#circle') ">-</button>
         <span id="target-height"></span>
         <button id="plus-height" onclick="plusClick('#target-height','height','#circle')">+</button>
       </div>
@@ -93,6 +93,7 @@
       function init() {
           // VALUES
           $('#target-width,#target-height').text(10);
+          $('#minus-width, #minus-height,#plus-width,#plus-height').click(rndBGcolor);
           // BUTTONS
           
           // $('#minus-height').click(minusClick('#target-width','height','#circle'));    
@@ -104,6 +105,16 @@
       }
       init();
       // ricalcando la soluzione appena vista per la width, generare html + js necessario per ottenere altri 2 tasti - e + che andranno a modificare l'altezza in accordo con il valore centale
+
+      function rndBGcolor(){
+        let red= Math.floor(Math.random()*255);
+        let green= Math.floor(Math.random()*255);
+        let blue= Math.floor(Math.random()*255);
+        console.log(red,green,blue)
+        $('#circle').css('background-color', 'rgb('+red+', '+green+', '+blue+' )')
+      }
+      
+      // ad ogni pressione dei tasti +/- modificare il background-color del cerchio con colore casuale
     </script>
   </body>
 </html>
