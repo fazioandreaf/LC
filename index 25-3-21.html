@@ -33,30 +33,169 @@
             <input type="text" name="" id="text">
         </div>
         <script>
-          function keyeventTest(){
-            var input= $('#text')
-            input.keydown(function(event){
-              console.log('down',input.val())
-              if(event.keyCode==13) {
-                var str=input.val()
-                $('#title').text(str);
-              }
-            })
-            input.keyup(function(){
-              var str=input.val()
-              var lng=str.length
-              console.log('up',str,lng)
-              if(lng>3){
-                str=str.slice(0,-1);
-                input.val(str)
-              }
-            })
-          }
-          function init() {
-            keyeventTest()
-          }
+          // function keyeventTest(){
+          //   var input= $('#text')
+          //   input.keydown(function(event){
+          //     console.log('down',input.val())
+          //     if(event.keyCode==13) {
+          //       var str=input.val()
+          //       $('#title').text(str);
+          //     }
+          //   })
+          //   input.keyup(function(){
+          //     var str=input.val()
+          //     var lng=str.length
+          //     console.log('up',str,lng)
+          //     if(lng>3){
+          //       str=str.slice(0,-1);
+          //       input.val(str)
+          //     }
+          //   })
+          // }
+          // function init() {
+          //   keyeventTest()
+          // }
           
-          $(document).ready(init)
-        </script>
+          // $(document).ready(init)
+
+
+        //   Crea 10 oggetti che rappresentano una zucchina.
+        // Dividi in due array separati le zucchine che misurano
+        // meno o più di 15cm.
+        // Infine stampa separatamente quanto pesano i due gruppi
+        // di zucchine
+        var misura=[];
+        var peso=[];
+        var arrTOT=[];
+        
+        for(i=0;i<10;i++){
+          var misuraFOR=((Math.random()*30).toFixed(2));
+          var pesoFOR=((Math.random()*30).toFixed(2));
+          misura.push(misuraFOR+' cm')
+          peso.push(pesoFOR+ ' Kg')
+        }
+        for(i=0;i<misura.length;i++){
+          var zucchine={
+            misura:misura[Math.floor(Math.random()*misura.length)],
+            peso:peso[Math.floor(Math.random()*misura.length)],
+          }
+          arrTOT[i]= zucchine;
+        }
+        
+        var long=[];
+        var small=[];
+        var longPESO=0;
+        var smallPESO=0;
+        console.log(arrTOT);
+        for(i=0;i<arrTOT.length;i++){
+          var misuraLIMIT=parseInt(arrTOT[i].misura);
+          if(misuraLIMIT>15){
+            long.push(arrTOT[i]);
+            let singoloPESO=(arrTOT[i].peso)
+            longPESO =longPESO + parseInt(singoloPESO)
+          } else{
+            small.push(arrTOT[i]);
+            let singoloPESO=(arrTOT[i].peso)
+            smallPESO =smallPESO + parseInt(singoloPESO)
+          }
+        }
+
+        console.log(long,small)
+        console.log('longpeso = ' + longPESO+" Kg",'smallpeso = '+ smallPESO +" Kg")
+        // soluzione di giovanni
+        // {
+
+        //   function esZucchine() {
+        //     var zucchine = [
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 10,
+        //         'lung': 12
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 13,
+        //         'lung': 20
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 2,
+        //         'lung': 7
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 256,
+        //         'lung': 32
+        //       }
+        //     ];    
+        //     var sommaPeso = 0;
+        //     for (var i=0;i<zucchine.length;i++) {
+        //       var zucchina = zucchine[i];
+        //       sommaPeso += zucchina['peso'];
+        //     }
+        //     console.log('somma peso', sommaPeso);
+        //   }
+        //   function getPesoSum(zucchine) {
+        //     var sommaPeso = 0;
+        //     for (var i=0;i<zucchine.length;i++) {
+        //       var zucchina = zucchine[i];
+        //       sommaPeso += zucchina['peso'];
+        //     }
+        //     return sommaPeso;
+        //   }
+        //   function esZucchine2() {
+        //     // Crea 10 oggetti che rappresentano una zucchina.
+        //     // Dividi in due array separati le zucchine che misurano
+        //     // meno o più di 15cm.
+        //     // Infine stampa separatamente quanto pesano i due gruppi
+        //     // di zucchine
+        //     var zucchine = [
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 10,
+        //         'lung': 12
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 13,
+        //         'lung': 20
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 2,
+        //         'lung': 7
+        //       },
+        //       {
+        //         'varieta': 'var1',
+        //         'peso': 256,
+        //         'lung': 32
+        //       }
+        //     ];    
+        //     var small = [];
+        //     var big = [];
+        //     for (var i=0;i<zucchine.length;i++) {
+        //       var zucchina = zucchine[i];
+        //       var lunghezza = zucchina['lung'];
+        //       if (lunghezza > 15) {
+        //         big.push(zucchina);
+        //       } else {
+        //         small.push(zucchina);
+        //       }
+        //     }
+        //     var smallPesoSum = getPesoSum(small);
+        //     var bigPesoSum = getPesoSum(big);
+        //     console.log(zucchine);
+        //     console.log(smallPesoSum, small);
+        //     console.log(bigPesoSum, big);
+        //   }
+        //   function init() {
+        //     // esZucchine();
+        //     esZucchine2();
+        //   }
+        //   // JQUERY
+        //   $(document).ready(init);
+        // }
+         
+         </script>
     </body>
 </html>
