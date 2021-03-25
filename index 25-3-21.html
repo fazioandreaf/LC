@@ -27,7 +27,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Hello world</h1>
+            <h1 id="title">Hello world</h1>
             <div class="boxes">
             </div>
             <input type="text" name="" id="text">
@@ -35,8 +35,12 @@
         <script>
           function keyeventTest(){
             var input= $('#text')
-            input.keydown(function(){
+            input.keydown(function(event){
               console.log('down',input.val())
+              if(event.keyCode==13) {
+                var str=input.val()
+                $('#title').text(str);
+              }
             })
             input.keyup(function(){
               var str=input.val()
