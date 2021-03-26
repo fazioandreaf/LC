@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Lc 24-3</title>
+        <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Lato';
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                width: 100vw;
+                height: 100vh;
+                background-color: purple;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="title">Hello world</h1>
+            <div class="boxes">
+            </div>
+            <input type="text" name="" id="text">
+        </div>
+        <script>
+          function es6var(){
+            const costante=[1,2,3];
+            // costante[0]=10; é possibile farlo
+            // costante=10; non é possibile farlo
+          } 
+          function init(){
+            es6var();
+          }
+            // Creare un array di oggetti: ogni oggetto descriverà 
+            // una bici da corsa con le seguenti proprietà: nome e peso. 
+            // Stampare a schermo la bici con peso minore.
+          let nomeARR=['Andrea','Lorenzo','Alessandro','Tiziana','Gioele','Nunzio','Jacopo','Raul', 'Mats','Vlad']
+          let peso=[];
+          let arrTOT=[];
+          
+          for(i=0;i<10;i++){
+            let pesoFOR=((Math.random()*30).toFixed(2));
+            peso.push(pesoFOR+ ' Kg')
+          }
+          for(i=0;i<nomeARR.length;i++){
+            let bici={
+              nome:nomeARR[Math.floor(Math.random()*nomeARR.length)],
+              weight:peso[Math.floor(Math.random()*nomeARR.length)],
+            }
+            arrTOT[i]= bici;
+          }
+          console.log(arrTOT);
+          let weakbike=10000000 
+          for(i=0;i<arrTOT.length;i++){
+            let {weight}= arrTOT[i]; //metto le graffe, il nome della variabile é quello all'interno
+            let prova=parseInt(weight);
+            console.log(prova);
+            if(prova<weakbike){
+              weakbike=prova
+            }
+          }       
+          console.log(weakbike);
+          $(document).ready(init);
+        </script>
+    </body>
+</html>
