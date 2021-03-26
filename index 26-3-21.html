@@ -44,32 +44,67 @@
             // Creare un array di oggetti: ogni oggetto descriverà 
             // una bici da corsa con le seguenti proprietà: nome e peso. 
             // Stampare a schermo la bici con peso minore.
-          let nomeARR=['Andrea','Lorenzo','Alessandro','Tiziana','Gioele','Nunzio','Jacopo','Raul', 'Mats','Vlad']
-          let peso=[];
+          // let nomeARR=['Andrea','Lorenzo','Alessandro','Tiziana','Gioele','Nunzio','Jacopo','Raul', 'Mats','Vlad']
+          // let peso=[];
+          // let arrTOT=[];
+          
+          // for(i=0;i<10;i++){
+          //   let pesoFOR=((Math.random()*30).toFixed(2));
+          //   peso.push(pesoFOR+ ' Kg')
+          // }
+          // for(i=0;i<nomeARR.length;i++){
+          //   let bici={
+          //     nome:nomeARR[Math.floor(Math.random()*nomeARR.length)],
+          //     weight:peso[Math.floor(Math.random()*nomeARR.length)],
+          //   }
+          //   arrTOT[i]= bici;
+          // }
+          // console.log(arrTOT);
+          // let weakbike=10000000 
+          // for(i=0;i<arrTOT.length;i++){
+          //   let {weight}= arrTOT[i]; //metto le graffe, il nome della variabile é quello all'interno
+          //   let prova=parseInt(weight);
+          //   console.log(prova);
+          //   if(prova<weakbike){
+          //     weakbike=prova
+          //   }
+          // }       
+          // Creare un array di oggetti di squadre di calcio. 
+          // Ogni squadra avrà diverse proprietà: 
+          // nome, punti fatti, falli subiti.
+          // Nome sarà l'unica proprietà da compilare, 
+          // le altre saranno tutte settate a 0.  
+          let nomeARR=['Catania','Palermo','juve','Inter','Milan','Firoentina','AScoli','trapani', 'Roma','Lazio']
+          let punti=[];
+          let falli=[];
           let arrTOT=[];
           
           for(i=0;i<10;i++){
-            let pesoFOR=((Math.random()*30).toFixed(2));
-            peso.push(pesoFOR+ ' Kg')
+            let puntiFOR=(Math.floor(Math.random()*100));
+            let falliFOR=(Math.floor(Math.random()*40));
+            punti.push(puntiFOR+ ' °')
+            falli.push(falliFOR)
           }
           for(i=0;i<nomeARR.length;i++){
             let bici={
               nome:nomeARR[Math.floor(Math.random()*nomeARR.length)],
-              weight:peso[Math.floor(Math.random()*nomeARR.length)],
+              points:punti[Math.floor(Math.random()*nomeARR.length)],
+              falli:falli[Math.floor(Math.random()*nomeARR.length)],
             }
             arrTOT[i]= bici;
           }
           console.log(arrTOT);
-          let weakbike=10000000 
           for(i=0;i<arrTOT.length;i++){
-            let {weight}= arrTOT[i]; //metto le graffe, il nome della variabile é quello all'interno
-            let prova=parseInt(weight);
-            console.log(prova);
-            if(prova<weakbike){
-              weakbike=prova
-            }
-          }       
-          console.log(weakbike);
+            
+          }
+              // Usando la destrutturazione creiamo un nuovo array 
+              // i cui elementi contengono solo nomi e falli subiti 
+              // e stampiamo tutto in console.
+              for(i=0;i<arrTOT.length;i++){
+                let singoloELEM= arrTOT[i];
+              
+                console.log({nome,falli}=singoloELEM)
+              }
           $(document).ready(init);
         </script>
     </body>
