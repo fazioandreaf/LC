@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Lc 6-4 Vue intro</title>
+        <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Lato';
+            }
+            .container {
+              display: flex;
+              justify-content: center;
+              height: 100vh;
+              background-color: lightgrey;
+            }
+        </style>
+    </head>
+    <body>
+      <!-- <div id="app" class="container">
+        <div class="row">
+          <h1>{{ msg }}</h1>
+          <label for="">Nome</label><input type="text" name="" id="" v-model='name1'>
+          <label for="">Cognome</label><input type="text" name="" id="" v-model='name2'>
+          <h1 style='background-color: paint;'>{{name1}} {{name2}}</h1>
+          <button @click='printhello'>submit</button>
+
+        </div>
+      </div> -->
+      <div id="app" class="container">
+            <div class="row">
+                <h1 :class="counter">{{number}}</h1>
+                <button @click="counterPiu">+</button>
+                <button @click="counterMeno">-</button>
+            </div>            
+        </div>
+    <script>
+    //   function init() {
+    //     new Vue({
+    //     el:'#app',
+    //     data:{
+    //       'msg':'Hello worlddd',
+    //       'name1': '',
+    //       'name2': '',
+    //     },
+    //     methods:{
+    //       printhello: function() {
+    //         console.log('ciao')
+    //       }
+    //     }
+    //   })
+    // };
+
+    //   $(init);
+
+      //vue ragiona per dom virtuali. Si bindano le variabili usando  v-model, ingenerale v-QUALSIASICOSA.  Bind sta per legare
+
+      // Utilizzare due input  in cui inseriremo nome e cognome
+
+    //codice di giovanni
+
+      // function initVue() {
+      // new Vue({
+      //   el: '#app',
+      //   data: {
+      //       'given_name': '',
+      //       'lastname': '',
+      //       'computedName': '',
+      //       'bgClasses': 'bg-green'
+      //   },
+      //   methods: {
+      //       fullName: function() {
+      //           //todo
+      //           //...
+      //           return this.given_name + ' ' + this.lastname;
+      //       },
+      //       printHello: function() {
+      //           this.computedName = `
+      //               Hello ${this.given_name} ${this.lastname}
+      //           `;
+      //         }
+      //       }
+      //     });
+      //   }
+      //   function initJQuery() {
+      //       const initText = 'Hello World!!';
+      //       $('#input-msg').val(initText);
+      //       $('#text-msg').text(initText);
+      //       $('#input-msg').keyup(function() {
+      //           const input = $(this);
+      //           const text = input.val();
+      //           $('#input-msg').text(text);
+      //       });
+      //   }
+      //   function init() {
+      //       initVue();
+      //       // initJQuery();
+      //   }
+      //   $(init);
+
+
+      //Stampare a schermo un messaggio di un h1, utilizzando i data. Bonus Inserire una immagine
+
+      //Modificare il codice appena condiviso per stampare all'interno dell'h1 il contatore di click fatti dall'utente sul bottone
+      function init(){
+      new Vue({
+      el: '#app',
+      data: {
+            'counter': '',
+            'number':0,
+      },
+      methods: {
+          counterPiu: function() {
+              this.number++
+          },
+          counterMeno: function() {
+            if(this.number>0){
+              this.number--
+            }
+          }
+      }
+      });
+
+      };
+      $(init);
+    </script> 
+  </body>
+</html>

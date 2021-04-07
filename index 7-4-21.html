@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Lc 6-4 Vue intro</title>
+        <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Lato';
+            }
+            .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              background-color: lightgrey;
+            }
+            .totH1{
+              display: flex;
+              justify-content: space-around;
+              width: 70vw;
+              flex-wrap: wrap;
+            }
+
+        </style>
+    </head>
+    <body>
+      <div id="app" class="container">
+            <div class="row">
+                <h1>{{testo}}</h1>
+                <img  v-if="imgflip" :src="imgSrc1" alt="" width="100px" @click="flip">
+                <img  v-if="!imgflip" :src="imgSrc2" alt="" width="100px" @click="flip">
+                <button @click="flip">Flip</button>
+                <button @click="addNumber">+</button>
+                <button @click="pariDispari">Pari dispari</button>
+                <button @click="hide">togli il primo numero</button>
+                <p>No image</p>
+                <div class="totH1">
+
+                  <h1 v-for="elements in maxNumber" v-model="elements" v-if="elements%2==resto && (elements >= min)"> {{elements}} -</h1>
+                </div>
+                <!-- mettendo al posto names un numero avrebbe scritto i numeri fino a quello finale definito li -->
+                <!-- Generare flip dell'immagine in Vue: inizialmente sara' visualizzata un'immagine e un bottone; alla pressione del bottone l'immagine verra' sostituita con un'altra (a vostra scelta) e viceversa. -->
+                <!-- Stampare sotto l'immagine i primi 10 numeri pari positivi attraverso il v-for -->
+                <!-- Aggiungere bottone che aumenta il limiti dei valori interi stampati visualizzando un ulteriore valore intero postivo -->
+                <!-- Aggiungere bottone che nasconde i pari e mostra i dispari e viceversa -->
+            </div>            
+        </div>
+    <script>
+      function init(){
+      new Vue({
+      el: '#app',
+      data: {
+        'min':0,
+        'testo':'Ciao',
+        'imgSrc1':'1.png',
+        'imgSrc2':'2.png',
+        'imgflip': true,
+        'maxNumber': 20,
+        'resto': 0,
+        'names':[['Andrea','Fazio'],'Genoveffa','Ciao'],
+        
+      },
+      methods: {
+        flip: function() {
+          this.imgflip=!this.imgflip  //occhio a =! o !=
+          // if(this.imgflip){
+          //   this.imgflip=false;
+          // } else {
+          //   this.imgflip=true;
+          // }
+        },
+        addNumber: function() {
+          this.maxNumber=this.maxNumber+2;
+        },
+        pariDispari: function(){
+          this.resto=this.resto==0?1:0; //ternario
+          // if(this.resto==0){
+          //   this.resto=1
+          // }else {this.resto=0}
+        },
+        hide: function(){
+          this.min=this.min+2
+        }
+      }
+      });
+
+      };
+      $(init);
+    </script> 
+  </body>
+</html>
