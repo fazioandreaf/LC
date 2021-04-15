@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Lc 15-4 Vue intro</title>
+        <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Lato';
+            }
+            .container {
+              flex-direction: column;
+              display: flex;
+              align-items: center;
+              height: 100vh;
+              background-color: lightgrey;
+            }
+            .box {
+              width: 50px;
+              height: 50px;
+              margin: 5px;;
+            }
+            .bg-red {
+              background-color: red;
+            }
+            .bg-green { 
+              background-color: green;
+            }        
+            </style>
+    </head>
+    <body>
+      <div id="app" class="container">
+      <button class="btn btn-primary" onclick="init()">ADD BOX</button>
+        <div id="target">
+        </div>
+    <script>
+      // TODO NOW: modificare il seguente codice per far apparire al click del bottone una box rossa nel caso in cui si riceva un true come risposta dal server (API), verde altrimenti
+      // function init(){
+      //   $.ajax({
+      //       url: "https://flynn.boolean.careers/exercises/api/random/boolean",
+      //       method: 'GET',
+      //       success: function(data) {
+      //         const res=data.response;
+      //         console.log(res)
+      //         if(res){
+      //             $('#target').append('<div class="box bg-red"></div>');
+      //           }else{
+      //             $('#target').append('<div class="box bg-green"></div>');
+      //       }
+      //       },
+      //       error: function() {
+      //           console.log('error');
+      //       }
+      //   });
+      //   console.log('hello');
+      // };
+      // document.addEventListener('DOMContentLoaded', init);
+      // TODO NOW: modificare l'esercizio in modo da generare box sempre dello stesso colore ma riportanti la cifra scaricata dalla seguente API
+
+        function init(){
+          $.ajax({
+            url: "https://flynn.boolean.careers/exercises/api/random/int",
+            method: 'GET',
+            success: function(data) {
+              const res=data.response;
+              console.log(res)
+              $('#target').append('<div class="box bg-red" style="width:'+res+'0px; height:'+res+'0px;" >'+res+'</div>');
+            
+            },
+            error: function() {
+                console.log('error');
+            }
+            
+          });};
+      
+      document.addEventListener('DOMContentLoaded', init);
+
+
+      //soluzione di giovanni
+
+//       function addClickListener() {
+//     const btn = $('#btn');
+//     btn.click(boxGenerator);
+// }
+// function boxGenerator() {
+//     $.ajax({
+//         url: 'https://flynn.boolean.careers/exercises/api/random/boolean',
+//         method: 'GET',
+//         success: function(data) {
+//             const res = data.response;
+//             generateBox(res);
+//         },
+//         error: function() {
+//             console.log('error');
+//         }
+//     });
+// }
+// function generateBox(type) {
+//     const target = $('#target');
+//     if (type) {
+//         target.append('<div class="box bg-red"></div>');
+//     } else {
+//         target.append('<div class="box bg-green"></div>');
+//     }
+// }
+// function init() {
+//    addClickListener();
+// }
+    </script> 
+  </body>
+</html>
