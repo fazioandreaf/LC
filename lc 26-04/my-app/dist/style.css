@@ -1,0 +1,10 @@
+body {
+  background-color: lightblue;
+}
+body .container {
+  display: flex;
+  justify-content: center;
+}
+body .container h1 {
+  color: #999191;
+}
